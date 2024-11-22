@@ -1,5 +1,5 @@
 <?php
-// Conexão com o banco de dados
+
 $host = 'localhost';
 $user = 'root';
 $password = '';
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Verificar se o ID foi passado
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 

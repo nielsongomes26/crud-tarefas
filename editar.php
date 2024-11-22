@@ -1,5 +1,5 @@
 <?php
-// Conexão com o banco de dados
+
 $host = 'localhost';
 $user = 'root';
 $password = '';
@@ -11,11 +11,11 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Verificar se o ID da tarefa foi passado
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Recuperar os dados da tarefa pelo ID
+
     $sql = "SELECT * FROM tarefas WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
     $stmt->close();
 }
 
-// Atualizar a tarefa
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $descricao = $_POST['descricao'];
     $concluido = isset($_POST['concluido']) ? 1 : 0;
